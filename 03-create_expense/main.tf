@@ -1,27 +1,28 @@
 resource "aws_instance" "sample"{
     ami = var.ami-value
     instance_type = var.instance-type
+    vpc_security_group_ids = var.vpc-group-id
 
     tags = {
-        Name = frontend
+        Name = "frontend"
     }
 }
 
 resource "aws_instance" "sample2"{
     ami = var.ami-value
     instance_type = var.instance-type
-
+    vpc_security_group_ids = var.vpc-group-id
     tags = {
-        Name = frontend
+        Name = "backend"
     }
 }
 
 resource "aws_instance" "sample3"{
     ami = var.ami-value
     instance_type = var.instance-type
-
+    vpc_security_group_ids = var.vpc-group-id
     tags = {
-        Name = frontend
+        Name = "mysql"
     }
 }
 
@@ -31,4 +32,8 @@ variable "ami-value" {
 
 variable "instance-type" {
     default = "t3.micro"
+}
+
+variable "vpc-group-id" {
+    default = ["sg-01ab91863562a96bf"]
 }
