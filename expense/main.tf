@@ -2,7 +2,7 @@ resource "aws_instance" "vms-1" {
     for_each = var.instance_type
     ami = var.ami-value
     vpc_security_group_ids =  var.vpc-group-id
-    instance_type = each.value[instance_type]
+    instance_type = each.value["instance_types"]
     tags = {
         Name = each.key
     }
@@ -20,13 +20,13 @@ variable "vpc-group-id" {
 variable "instance_type" {
     default = {
         frontend = {
-            instance_type = "t3.micro"
+            instance_types = "t3.micro"
         }
         mysql = {
-            instance_type = "t3.small"
+            instance_types = "t3.small"
         }
         backend = {
-            instance_type = "t3.micro"
+            instance_types = "t3.micro"
         }
     }
 }
