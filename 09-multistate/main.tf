@@ -5,3 +5,5 @@ terraform {
 resource "output" "sample" {
     values = var.env
 }
+
+variable "env"{}
