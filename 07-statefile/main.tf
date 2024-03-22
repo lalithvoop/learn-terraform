@@ -1,5 +1,5 @@
 terraform {
-    backend "S3"{
+    backend "s3"{
         bucket = "vsltfbucket"
         key = "sample/statefile"
         region = "us-east-1"
