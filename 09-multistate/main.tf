@@ -2,8 +2,8 @@ terraform {
     backend "s3" {}
 }
 
-resource "output" "sample" {
-    values = var.env
+ output "sample" {
+    value = var.env
 }
 
 variable "env"{}
