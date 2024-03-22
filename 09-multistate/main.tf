@@ -2,4 +2,6 @@ terraform {
     backend "s3" {}
 }
 
-resource "null_resource" "sample" {}
+resource "output" "sample" {
+    values = var.env
+}
