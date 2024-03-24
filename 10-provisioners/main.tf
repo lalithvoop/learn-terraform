@@ -1,7 +1,7 @@
 resource "aws_instance" "resource" {
     ami = "ami-05f020f5935e52dc4"
     instance_type = "t3.small"
-    vpc_security_group_ids = ["vpc-06562b7d0fb5fc1cb"]
+    vpc_security_group_ids = ["	sg-01ab91863562a96bf"]
     
     connection {
     type     = "ssh"
