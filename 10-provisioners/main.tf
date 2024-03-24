@@ -13,7 +13,7 @@ resource "aws_instance" "resource" {
   provisioner "remote-exec" {
     inline = [
       "sudo dnf install nginx",
-      "sudi systemctl start nginx"
+      "sudo systemctl start nginx"
     ]
   }
 
